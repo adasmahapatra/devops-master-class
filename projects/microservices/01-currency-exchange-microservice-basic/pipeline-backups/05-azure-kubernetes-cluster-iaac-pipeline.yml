@@ -7,6 +7,7 @@ pool:
 steps:
 - script: echo K8S Terraform Azure!
   displayName: 'Run a one-line script'
+  # go to Azure DevOps UI -> Library and upload the generated public key file as Upload secure file and download the file as part of this step
 - task: DownloadSecureFile@1
   name: publickey
   inputs:
@@ -16,7 +17,8 @@ steps:
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    # commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    # create valiables for generated client_id and client_secret
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'azure-resource-manager-service-connection'
     ensureBackend: true
@@ -30,7 +32,7 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    # We need to create a new Azure Resource Manager connection in Azure UI -> project settings-> Pipeline -> service connections 
+    # We need to create a new Azure Resource Manager connection in Azure DevOps UI -> project settings-> Pipeline -> service connections 
     environmentServiceName: 'azure-resource-manager-service-connection'       
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
 
