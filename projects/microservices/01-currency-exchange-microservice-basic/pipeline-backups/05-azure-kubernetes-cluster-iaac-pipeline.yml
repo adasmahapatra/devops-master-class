@@ -30,7 +30,7 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'azure-resource-manager-service-connection'
+    environmentServiceName: 'azure-resource-manager-service-connection'       /** We need to create a new Azure Resource Manager connection in Azure UI -> project settings-> Pipeline -> service connections **/
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
 
 - task: TerraformCLI@0
