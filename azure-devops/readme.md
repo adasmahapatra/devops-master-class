@@ -105,7 +105,7 @@ kubectl cluster-info
 ### Manually setting up from local machine
 
 #### Create Service Account For Your Subscription To Create Azure K8S Cluster using Terraform
-
+Once you log in using Azure CLI the <<azure_subscription_id>> will be printed in the console. Once you geenerate the Service account the appId and password will be printed in the console.
 ```
 az login
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<<azure_subscription_id>>"
