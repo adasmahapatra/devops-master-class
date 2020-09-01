@@ -1,3 +1,4 @@
+//For generation of Client ID Client secret and public key refer https://github.com/adasmahapatra/devops-master-class/tree/master/azure-devops
 variable client_id {}
 variable client_secret {}
 variable ssh_public_key {}
