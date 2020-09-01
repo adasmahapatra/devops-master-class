@@ -1,7 +1,7 @@
 # Azure DevOps
 
 ## Azure Marketplace
-
+The bellow Terraform 1 and Terraform 2 Plugin needs to be installed in the browser after login to Azure to create the terraform pipele in Azure.
 - Terraform 1 (https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks)
 - Terraform 2 (https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)
 - Aws (https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools)
