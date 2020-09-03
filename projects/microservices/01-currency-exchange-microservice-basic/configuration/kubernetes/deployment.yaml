@@ -68,4 +68,4 @@ spec:
   selector:
     app: currency-exchange
   sessionAffinity: None #CHANGE
-  type: LoadBalancer
+  type: LoadBalancer # Once we configure Ingress this will be NodePort, NodePort will not have external IP, that will be done through Ingress load balancer
